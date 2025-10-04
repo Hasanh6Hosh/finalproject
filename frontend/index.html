@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <!-- Character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ניהול פרויקטים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Header section -->
+    <header>
+        <h1>מערכת ניהול פרויקטים</h1>
+    </header>
+
+    <!-- Main container -->
+    <div class="container">
+        
+        <!-- Button to add new project -->
+        <button class="btn-add" id="addProjectBtn">+ הוספת פרויקט חדש</button>
+        
+        <!-- Grid container for project cards -->
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Modal popup for creating/editing projects -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">הוספת פרויקט חדש</h2>
+            
+            <!-- Form for project details -->
+            <form id="projectForm">
+                <!-- Project name input -->
+                <div class="form-group">
+                    <label>שם הפרויקט:</label>
+                    <input type="text" id="projectName" required>
+                </div>
+                
+                <!-- Image file upload section -->
+                <div class="form-group">
+                    <label>תמונת הפרויקט:</label>
+                    <input type="file" id="projectImage" accept="image/*">
+                    <div id="imagePreview"></div>
+                </div>
+                
+                <!-- Project description input -->
+                <div class="form-group">
+                    <label>תיאור:</label>
+                    <textarea id="projectDesc" rows="3" required></textarea>
+                </div>
+                
+                <!-- Project rating input -->
+                <div class="form-group">
+                    <label>דירוג (1-5):</label>
+                    <input type="number" id="projectRating" min="1" max="5" value="3" required>
+                </div>
+                
+                <!-- Submit button -->
+                <button type="submit" class="btn-submit">שמירה</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
